@@ -3,9 +3,10 @@ import * as THREE from 'three';
 //creates a scene
 const scene = new THREE.Scene();
 
-//creates a camera with an fov of 75
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5; //moves the camera so it isn't in the centre of the cube
+//creates a camera
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
+camera.position.set(0, 0, 30); //moves the camera so it isn't in the centre of the cube
+camera.lookAt( 0, 0, 0 ); //makes sure the camera is always looking at the centre of the world
 
 //creates the renderer
 const renderer = new THREE.WebGLRenderer();
@@ -13,7 +14,7 @@ renderer.setSize(window.innerWidth, window.innerHeight); //sets the size of the 
 document.body.appendChild(renderer.domElement); //appends the renderer to the html
 
 //creates a cube
-const cubegeometry = new THREE.BoxGeometry(1, 1, 1); //width, height and depth of cube
+const cubegeometry = new THREE.BoxGeometry(7, 7, 7); //width, height and depth of cube
 const cubematerial = new THREE.MeshBasicMaterial({color: 0xf000fb}); //colour of the cube
 const cube = new THREE.Mesh(cubegeometry, cubematerial); //creates a mesh of the cube applying the geometry and the material
 scene.add(cube); //adds the cube to the scene at (0,0,0)
