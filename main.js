@@ -2,10 +2,12 @@ import * as THREE from 'three';
 
 //creates a scene
 const scene = new THREE.Scene();
+scene.background = new THREE.Color("#f0f0f0");
 
 //creates a camera
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
 camera.position.set(0, 0, 30); //moves the camera so it isn't in the centre of the cube
+//camera.position.z = 5
 camera.lookAt( 0, 0, 0 ); //makes sure the camera is always looking at the centre of the world
 
 //creates the renderer
