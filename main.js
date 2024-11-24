@@ -30,8 +30,9 @@ const linematerial = new THREE.LineBasicMaterial({color: 0xf000fb});
 const line = new THREE.Line(linegeometry, linematerial)
 scene.add(line);
 
-
 function animate() {
+
+    line.rotation.y += 0.01;
 
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
