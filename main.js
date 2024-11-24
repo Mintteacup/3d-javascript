@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 //creates a scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color("#f0f0f0");
+scene.background = new THREE.Color("#000000");
 
 //creates a camera
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
@@ -15,9 +15,14 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight); //sets the size of the renderer
 document.body.appendChild(renderer.domElement); //appends the renderer to the html
 
+//creates lighting
+const light = new THREE.DirectionalLight("#9CDBA6", 10);
+light.position.set(1, 1, 1);
+scene.add(light);
+
 //creates a cube
 const cubegeometry = new THREE.BoxGeometry(7, 7, 7); //width, height and depth of cube
-const cubematerial = new THREE.MeshBasicMaterial({color: "#f000fb"}); //colour of the cube
+const cubematerial = new THREE.MeshLambertMaterial({color: "#86B0FF", emissive: "#86B0FF"}); //colour of the cube
 const cube = new THREE.Mesh(cubegeometry, cubematerial); //creates a mesh of the cube applying the geometry and the material
 scene.add(cube); //adds the cube to the scene at (0,0,0)
 
