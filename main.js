@@ -18,7 +18,6 @@ scene.add(cube); //adds the cube to the scene at (0,0,0)
 
 camera.position.z = 5; //moves the camera so it isn't in the centre of the cube
 
-//
 function animate() {
 
     cube.rotation.x += 0.01;
