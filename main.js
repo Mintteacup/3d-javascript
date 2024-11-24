@@ -15,7 +15,7 @@ document.body.appendChild(renderer.domElement); //appends the renderer to the ht
 
 //creates a cube
 const cubegeometry = new THREE.BoxGeometry(7, 7, 7); //width, height and depth of cube
-const cubematerial = new THREE.MeshBasicMaterial({color: 0xf000fb}); //colour of the cube
+const cubematerial = new THREE.MeshBasicMaterial({color: "#f000fb"}); //colour of the cube
 const cube = new THREE.Mesh(cubegeometry, cubematerial); //creates a mesh of the cube applying the geometry and the material
 scene.add(cube); //adds the cube to the scene at (0,0,0)
 
@@ -26,7 +26,7 @@ points.push(new THREE.Vector3(0, 10, 0));
 points.push(new THREE.Vector3(10, 0, 0));
 
 const linegeometry = new THREE.BufferGeometry().setFromPoints(points);
-const linematerial = new THREE.LineBasicMaterial({color: 0xf000fb});
+const linematerial = new THREE.LineBasicMaterial({color: "#f000fb"});
 const line = new THREE.Line(linegeometry, linematerial)
 scene.add(line);
 
